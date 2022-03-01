@@ -19,11 +19,12 @@ export type CreateNodeAction<S extends Schema> = {
 }
 
 export const createNode = <S extends Schema>(
+	name: string,
 	kind: keyof S,
 	position: Position
 ): CreateNodeAction<S> => ({
 	type: "node/create",
-	id: `${kind}_${nanoid(10)}`,
+	id: `${name}_${nanoid(10)}`,
 	kind,
 	position,
 })

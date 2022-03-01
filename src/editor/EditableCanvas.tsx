@@ -31,7 +31,8 @@ export function Canvas<S extends Schema>(props: CanvasProps<S>) {
 			const { x, y } = monitor.getSourceClientOffset()!
 			const { left, top } = context.svgRef.current!.getBoundingClientRect()
 			const position = snap(context, [x - left, y - top])
-			props.dispatch(createNode(kind, position))
+			const name = props.kinds[kind].name
+			props.dispatch(createNode(name, kind, position))
 		},
 	})
 

@@ -36,6 +36,7 @@ export interface GraphNodeProps<S extends Schema> {
 }
 
 export function GraphNode<S extends Schema>(props: GraphNodeProps<S>) {
+	// console.log(props)
 	const { name, backgroundColor, inputs, outputs, img, params } = props.kinds[
 		props.node.kind
 	]
