@@ -24,7 +24,7 @@ export const createNode = <S extends Schema>(
 	position: Position
 ): CreateNodeAction<S> => ({
 	type: "node/create",
-	id: `${name}_${nanoid(10)}`,
+	id: `${name.split('.')[0]}_${nanoid(10)}`,
 	kind,
 	position,
 })
